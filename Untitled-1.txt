@@ -1,0 +1,54 @@
+# IT Intellex - Innovate. Learn. Build.
+
+[IT Intellex](http://localhost:3000)
+- [Home](http://localhost:3000#home)
+- [Events](http://localhost:3000#events)
+- [Activities](http://localhost:3000#activities)
+- [Projects](http://localhost:3000#projects)
+- [Team](http://localhost:3000#team)
+- [Admin](http://localhost:3000#admin-modal)
+[Home](http://localhost:3000#home)
+[Events](http://localhost:3000#events)
+[Activities](http://localhost:3000#activities)
+[Projects](http://localhost:3000#projects)
+[Team](http://localhost:3000#team)
+[Admin](http://localhost:3000#admin-modal)
+
+## Admin Login
+
+# Future is Loaded...
+Innovating tomorrow, one pixel at a time.
+[Explore Events](http://localhost:3000#events)
+[View Projects](http://localhost:3000#projects)
+
+## Admin Dashboard
+
+### Post New Event
+
+### Add Team Member
+
+### Add Project
+
+## Upcoming Events
+Loading upcoming events...
+
+## Past Events
+Loading past events...
+
+## Our Activities
+
+### Cyber Security Layout
+Implemented a secure network topology for the campus lab.
+
+### Open Source Contribution
+Club members contributed to 50+ open source repos.
+
+## Completed Projects
+Loading projects...
+
+## The Team
+Loading team...
+© 2025 IT Intellex Club. All rights reserved.
+[Instagram](http://localhost:3000)
+[LinkedIn](http://localhost:3000)
+[GitHub](http://localhost:3000)

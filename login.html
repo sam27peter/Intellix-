@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - IT Intellex</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Reusing Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f4f6f8;
+            overflow: hidden;
+        }
+
+        /* Geometric Shapes for Background */
+        .login-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .ls-1 {
+            top: -10%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-yellow);
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+
+        .ls-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid black;
+            text-align: center;
+            position: relative;
+        }
+
+        .login-card h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: black;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #fafafa;
+            font-family: var(--font-body);
+        }
+
+        .login-card input:focus {
+            border-color: black;
+            outline: none;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-shape ls-1"></div>
+    <div class="login-shape ls-2"></div>
+
+    <div class="login-card">
+        <h2>Admin Portal</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="btn primary-btn" style="width:100%; border-radius: 10px;">Login</button>
+        </form>
+        <a href="index.html" class="back-link">&larr; Back to Website</a>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+
+            btn.textContent = 'Verifying...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: u, password: p })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    localStorage.setItem('isAdmin', 'true');
+                    window.location.href = 'index.html'; // Redirect to home
+                } else {
+                    alert(data.message);
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Connection Error');
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>

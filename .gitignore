@@ -1,0 +1,25 @@
+# Node
+node_modules/
+
+# Environment variables
+.env
+
+# SQLite database (runtime data)
+*.db
+*.sqlite
+*.sqlite3
+
+# Legacy JSON data (no longer used)
+data/
+
+# Uploads (user files)
+uploads/
+
+# Editor / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
