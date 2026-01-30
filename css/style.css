@@ -1211,6 +1211,205 @@ body.modal-open {
         padding: 6px 14px;
     }
 
+    .team-grid {
+        gap: 16px;
+    }
+
+    .team-card {
+        width: calc(50% - 8px);
+        max-width: 180px;
+        height: 180px;
+    }
+
+    .team-overlay h3 {
+        font-size: 0.9rem;
+    }
+
+    .team-overlay p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    #team .section-title {
+        margin-bottom: 25px;
+        font-size: 2.5rem;
+    }
+    /* ---------- GLOBAL ---------- */
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        margin-bottom: 24px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 24px;
+        z-index: 2;
+        position: relative;
+    }
+
+    .cta-buttons .btn {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* ---------- HERO SHAPES (CALMER) ---------- */
+
+    .shape-1 {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 70px solid var(--accent-yellow);
+    }
+
+    .shape-2 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .shape-3 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .shape-4 {
+        width: 70px;
+        height: 70px;
+        border-width: 12px;
+    }
+
+    /* ---------- EVENTS ---------- */
+
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card-content {
+        padding: 16px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.8rem;
+    }
+
+    /* ---------- ACTIVITIES (HORIZONTAL SCROLL) ---------- */
+
+    .activity-grid {
+        gap: 16px;
+        padding: 20px 10px;
+    }
+
+    .activity-item {
+        min-width: 180px;
+        max-width: 180px;
+    }
+
+    .activity-item h3 {
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    /* ---------- PROJECTS (HORIZONTAL SCROLL) ---------- */
+
+    .projects-scroll-wrapper {
+        gap: 16px;
+        padding: 20px 10px;
+    }
+
+    .project-card-horizontal {
+        min-width: 200px;
+        max-width: 200px;
+        padding: 16px;
+    }
+
+    .project-card-horizontal h3 {
+        font-size: 1.05rem;
+    }
+
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    /* ---------- TEAM ---------- */
+
+    .team-grid {
+        gap: 16px;
+    }
+
+    .team-card {
+        width: calc(50% - 8px);
+        max-width: 170px;
+        height: 170px;
+    }
+
+    .team-overlay h3 {
+        font-size: 0.85rem;
+    }
+
+    .team-overlay p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+
+    /* ---------- MODALS ---------- */
+
+    .modal-content {
+        width: 92%;
+        max-height: 80vh;
+    }
+
+    .modal-header {
+        padding: 24px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-section p {
+        font-size: 0.9rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
 }
 
 
