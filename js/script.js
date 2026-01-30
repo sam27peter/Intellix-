@@ -70,6 +70,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
             </div>
         `;
         contentModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+
     };
 
     window.openActivityModal = (event, activity) => {
@@ -103,6 +105,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
             `;
 
             contentModal.style.display = 'flex';
+            document.body.classList.add('modal-open');
+
         };
 
         event.stopPropagation();
@@ -122,12 +126,18 @@ document.querySelectorAll('.nav-links a').forEach(link => {
             </div>
         `;
         contentModal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+
     };
 
     // Close modals on outside click
     window.onclick = (e) => {
-        if (e.target == contentModal) contentModal.style.display = "none";
+        if (e.target == contentModal) {
+            contentModal.style.display = "none";
+            document.body.classList.remove('modal-open');
+        }
     };
+
 
     // --- Render Logic ---
 
