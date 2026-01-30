@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+        navbar.style.background = 'black';
+        navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+    } else {
+        navbar.style.background = 'rgba(0,0,0,0.6)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
 
     // --- Global Helpers ---
     window.showAdminTab = (tabId) => {
