@@ -1039,24 +1039,19 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+
     .navbar {
         width: 100%;
         top: 0;
         left: 0;
     }
 
-
+    .container {
+        padding: 0 20px;
+    }
 
     .hero h1 {
         font-size: 3rem;
-    }
-
-    .activity-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .container {
-        padding: 0 20px;
     }
 
     .projects-scroll-wrapper {
@@ -1066,37 +1061,49 @@ body {
     .project-card-horizontal {
         min-width: 280px;
     }
+
+    /* --- NAVIGATION FIX --- */
+
+    .nav-right {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    /* HIDE normal menu */
     .nav-links {
         position: absolute;
-        top: var(--nav-height);
-        right: 20px;
+        top: 100%;
+        right: 0;
         background: black;
         flex-direction: column;
         gap: 20px;
         padding: 25px;
         border-radius: 15px;
         display: none;
+        z-index: 2000;
     }
 
+    /* SHOW menu when hamburger clicked */
     .nav-links.active {
         display: flex;
     }
 
+    /* FORCE hamburger to be visible */
     .hamburger {
-        display: flex;
+        display: flex !important;
+        position: relative;
+        z-index: 2001;
     }
 
-}
-@media (max-width: 768px) {
-
-    .nav-links {
-        display: none; /* hide full menu */
-    }
-
-    .hamburger {
-        display: flex; /* show 3-line menu */
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
     }
 }
+
 
 /* Footer */
 footer {
