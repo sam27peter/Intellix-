@@ -45,6 +45,12 @@ body.modal-open {
     height: 100vh;
 }
 
+/* Lock background scroll when mobile nav is open */
+body.nav-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
 
 /* Container Spacing */
 .container {

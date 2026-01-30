@@ -14,15 +14,36 @@ window.addEventListener('scroll', () => {
 });
 
 if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+
+    // Toggle mobile nav
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+
         navLinks.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside (mobile only)
+    document.addEventListener('click', (e) => {
+        if (
+            window.innerWidth <= 768 &&
+            navLinks.classList.contains('active') &&
+            !navLinks.contains(e.target) &&
+            !hamburger.contains(e.target)
+        ) {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
     });
 }
+
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        document.body.classList.remove('nav-open');
     });
 });
+
 
     // --- Global Helpers ---
     window.showAdminTab = (tabId) => {
