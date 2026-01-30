@@ -699,12 +699,16 @@ body.modal-open {
     border: 3px solid black;
     box-shadow: 20px 20px 0px var(--accent-purple);
     border-radius: 25px;
-    max-width: 700px;
+
     width: 90%;
+    max-width: 700px;
+
+    height: 85vh;        /* 🔑 REQUIRED */
     max-height: 85vh;
-    overflow: hidden;
+
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     position: relative;
 }
 
@@ -842,6 +846,15 @@ body.modal-open {
     font-size: 1.1rem;
     padding: 15px 35px;
 }
+
+/* 🔑 FIX: Enable modal scrolling */
+#modal-body-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
 
 .register-link {
     font-family: 'Orbitron', sans-serif;
@@ -1380,10 +1393,20 @@ body.modal-open {
     }
 
     /* ---------- MODALS ---------- */
+    .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
     .modal-content {
-        width: 92%;
+        width: 94%;
+        height: 80vh;
         max-height: 80vh;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
     .modal-header {
@@ -1391,8 +1414,12 @@ body.modal-open {
     }
 
     .modal-body {
-        padding: 20px;
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     }
+
 
     .modal-header h2 {
         font-size: 1.4rem;
